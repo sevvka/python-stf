@@ -1,0 +1,42 @@
+while True:
+    a = input('Введите первое число: ')
+    try:
+        a = int(a)
+        print(a, '...', '...')
+        break
+    except ValueError:
+        print('Число введено неправильно, попробуйте еще раз')
+
+    
+while True:
+    c = input('Введите второе число: ')
+    try:
+        c = int(c)
+        print(a, '...', c)
+        break
+    except ValueError:
+        print('Число введено неправильно, попробуйте еще раз')
+
+while True:
+    b = input('Введите действие: ')
+    
+    if b == '+':
+        result = a + c
+        break
+    elif b == '-':
+        result = a - c
+        break
+    elif b == '*':
+        result = a * c
+        break
+    elif b == '/':
+        if c == 0: 
+            print('На ноль делить нельзя, выберите другое действие')
+        else:
+            result = a / c
+            break
+    else:
+        print('Действие написано неправильно, попробуйте еще раз, доступные варианты:+,-,/,*')
+
+
+print('Решение:', a, b, c, '=', result)
