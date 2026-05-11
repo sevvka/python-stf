@@ -1,0 +1,43 @@
+while True:
+    print('Введите первое число')
+    a = input()
+    try:
+        a = int(a)
+        break
+    except ValueError:
+        print('Число введено неправильно, попробуйте еще раз')
+
+    
+while True:
+    print('Введите второе число')
+    c = input()
+    try:
+        c = int(c)
+        break
+    except ValueError:
+        print('Число введено неправильно, попробуйте еще раз')
+
+while True:
+    print('Введите действие')
+    b = input()
+    
+    if b == '+':
+        result = a + c #добавлена проверка на корректность действий
+        break
+    elif b == '-':
+        result = a - c
+        break
+    elif b == '*':
+        result = a * c
+        break
+    elif b == '/':
+        if c == 0: #добавлена ошибка при делении на ноль
+            print('На ноль делить нельзя, выберите другое действие')
+        else:
+            result = a / c
+            break
+    else:
+        print('Действие написано неправильно, попробуйте еще раз, доступные варианты:+,-,/,*')
+
+
+print('Ваш ответ:', result)
