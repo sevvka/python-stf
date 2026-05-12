@@ -1,0 +1,37 @@
+import random
+
+correct = random.randint(1,100)
+Tries = 0
+Used = []
+
+while True:
+    try:
+        answer = input('Your guess(1-100): ')
+        answer = int(answer)
+        if answer > 100 or answer < 1:
+            print('only numbers from 1 to 100 are allowed')
+            continue
+        if answer in Used:
+            print('this number was used already')
+            continue
+        Used.append(answer)
+        if answer > correct:
+            Tries +=1
+            print('answer is lower, try again')
+            print('you have: ', 10 - Tries, 'tries')
+        if answer < correct:
+            Tries +=1
+            print('answer is higher, try again')
+            print('you have: ', 10 - Tries, 'tries')
+        if answer == correct:
+            Tries +=1
+            print('congratulations, you guessed right')
+            print('amount of tries u needed:', Tries )
+            print('previous answers: ', Used)
+            break
+        elif Tries >= 10:
+            print('you used all your tries')
+            print('previous answers: ', Used)
+            break
+    except ValueError:
+        print('only numbers allowed')
