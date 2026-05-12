@@ -1,0 +1,23 @@
+correct_pass = '12345'
+attempts = 3
+uses = 0
+
+print('пароль: неизвестен')
+
+while attempts > uses:
+    password = input('введите пароль: ').replace(" ", "") #replace заменяет 1 значение в скобках на второе, в этом случае пробел на пустоту
+    if not password:
+        print('you didnt type anything')
+        continue
+    if password == correct_pass:
+        print('you won')
+        break
+    else:
+        uses += 1
+        print('incorrect', 'remaining attempts = ', attempts - uses)
+        if uses == 1:
+            print('only numbers')
+        if uses == 2:
+            print('from 1 to 5')
+        if uses == attempts:
+            print('you lost')
